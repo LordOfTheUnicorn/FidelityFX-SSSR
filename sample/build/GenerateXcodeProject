@@ -1,0 +1,4 @@
+mkdir Metal
+cd Metal
+cmake ../.. -G Xcode -DGFX_API=Metal 
+cd ..

@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.4)
-set(CMAKE_GENERATOR_PLATFORM x64)
+
+if(NOT APPLE)
+    set(CMAKE_GENERATOR_PLATFORM x64)
+endif()
 
 project (SssrSample_${GFX_API})
 
@@ -26,6 +29,9 @@ elseif(GFX_API STREQUAL VK)
 
     # the Vulkan sample requires glslc.exe for GLSL shader compilation. copy it over from the Vulkan SDK 
     file(COPY  $ENV{VULKAN_SDK}/Bin/glslc.exe DESTINATION ${CMAKE_HOME_DIRECTORY}/bin)
+
+elseif(GFX_API STREQUAL Metal)        
+    add_subdirectory(src/Metal) 
 
 else()
     message(STATUS "----------------------------------------------------------------------------------------")

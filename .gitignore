@@ -167,6 +167,7 @@ DocProject/Help/*.hhk
 DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
+sample/build/Metal
 
 # Click-Once directory
 publish/
